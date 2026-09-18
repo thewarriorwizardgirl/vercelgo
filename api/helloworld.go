@@ -1,14 +1,10 @@
-package main
+package handler
 
 import (
 	"fmt"
 	"net/http"
 )
 
-func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello Manu, you've requested: %s\n", r.URL.Path)
-	})
-
-	http.ListenAndServe(":80", nil)
+func Handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello User Manu, you've requested: %s\n", r.URL.Path)
 }
